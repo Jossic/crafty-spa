@@ -1,6 +1,6 @@
-import { timelinesSlice } from '@/lib/timelines/slices/timelines.slice';
-import { combineReducers } from '@reduxjs/toolkit';
-import { messagesSlice } from '@/lib/timelines/slices/messages.slice';
+import { combineReducers } from "@reduxjs/toolkit";
+import { timelinesSlice } from "./slices/timelines.slice";
+import { messagesSlice } from "./slices/messages.slice";
 
 export const reducer = combineReducers({
   [timelinesSlice.name]: timelinesSlice.reducer,

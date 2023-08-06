@@ -9,13 +9,16 @@ export const timelinesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAuthUserTimeline.fulfilled, (state, action) => {
+      const timeline = action.payload;
       timelinesAdapter.addOne(state, {
-        id: action.payload.id,
-        user: action.payload.user,
-        messages: action.payload.messages.map((message) => message.id),
+        id: timeline.id,
+        user: timeline.user,
+        messages: timeline.messages.map((message) => message.id),
       })
     });
   },
 });
 
-export const selectTimeline = (timelineId: string, state: RootState) => timelinesAdapter.getSelectors().selectById(state.timelines, timelineId);
+
+export const selectTimeline = (timelineId: string, state: RootState) =>
+  timelinesAdapter.getSelectors().selectById(state.timelines, timelineId);

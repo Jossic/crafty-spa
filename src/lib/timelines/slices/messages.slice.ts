@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAuthUserTimeline } from '@/lib/timelines/usecases/get-auth-user-timeline.usecase';
-import { RootState } from '@/lib/create-store';
 import { messagesAdapter } from '@/lib/timelines/models/message.entity';
+import { RootState } from '@/lib/create-store';
 
 
 export const messagesSlice = createSlice({
